@@ -7,6 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -50,6 +51,8 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       security.pam.services.sudo_local.touchIdAuth = true;
+
+      system.primaryUser = "tejasmadhukar";
     };
   in
   {
@@ -57,6 +60,7 @@
     # $ darwin-rebuild build --flake .#air
     darwinConfigurations."air" = nix-darwin.lib.darwinSystem {
       modules = [ 
+        ./modules/darwin/homebrew.nix
         configuration
         nix-homebrew.darwinModules.nix-homebrew
         {
@@ -68,7 +72,7 @@
                 enableRosetta = true;
 
                 # User owning the Homebrew prefix
-                user = "Tejasmadhukar";
+                user = "tejasmadhukar";
 
                 # Optional: Declarative tap management
                 taps = {
