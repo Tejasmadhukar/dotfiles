@@ -6,6 +6,11 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     homebrew-core = {
@@ -18,7 +23,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -26,7 +31,7 @@
       environment.systemPackages =
         with pkgs; [ 
           vim
-          neovim
+	  neovim
           tmux
         ];
 
@@ -52,8 +57,16 @@
 
       security.pam.services.sudo_local.touchIdAuth = true;
 
+      nixpkgs.config.allowUnfree = true;
+
       system.primaryUser = "tejasmadhukar";
+
+      users.users.tejasmadhukar = {
+          name = "tejasmadhukar";
+          home = "/Users/tejasmadhukar";
+      };
     };
+
   in
   {
     # Build darwin flake using:
@@ -62,7 +75,9 @@
       modules = [ 
         ./modules/darwin/homebrew.nix
         configuration
+
         nix-homebrew.darwinModules.nix-homebrew
+
         {
             nix-homebrew = {
                 # Install Homebrew under the default prefix
@@ -85,7 +100,16 @@
                 # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
                 # mutableTaps = false;
           };
+
         }
+
+          home-manager.darwinModules.home-manager 
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            home-manager.users.tejasmadhukar = import ./modules/darwin/home.nix;
+          }
       ];
     };
   };
