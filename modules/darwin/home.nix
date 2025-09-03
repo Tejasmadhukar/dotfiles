@@ -2,15 +2,17 @@
   home.username = "tejasmadhukar";
   home.homeDirectory = "/Users/tejasmadhukar";
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
+
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+
     shellAliases = {
-        l = "ls -la";
+      l = "ls -la";
     };
   };
-
-  # programs.neovim.enable = true;
-  # programs.tmux.enable = true;
 
   home.packages = with pkgs; [
     nodejs_22
@@ -18,7 +20,6 @@
     rustup
     pnpm
   ];
-
 
   xdg.configFile = {
     "nvim".source = ../../nvim;
