@@ -14,6 +14,13 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+    };
+  };
+
   home.packages = with pkgs; [
     nodejs_22
     go
