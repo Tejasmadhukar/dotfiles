@@ -15,7 +15,9 @@ config.color_scheme = 'Tokyo Night'
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 10
 
--- config.default_prog = { '/etc/profiles/per-user/tejasmadhukar/bin/fish' }
+-- fish being fishy :(
+-- config.default_prog = { '/etc/profiles/per-user/tejasmadhukar/bin/fish', '-l' }
+config.default_prog = { "/bin/zsh", "-l", "-c", "fish" }
 
 -- and finally, return the configuration to wezterm
 return config

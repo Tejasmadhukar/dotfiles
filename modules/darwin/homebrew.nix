@@ -7,14 +7,14 @@
     onActivation.cleanup = "uninstall";
 
     brews = [
-        "gh"
+      "gh"
     ];
 
     casks = [
-        "wezterm"
-        "legcord"
-	"tomatobar"
-        # "zen-browser"
+      "wezterm"
+      "legcord"
+      "tomatobar"
+      # "zen-browser"
     ];
 
     # doesn't index 
