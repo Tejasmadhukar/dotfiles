@@ -14,6 +14,7 @@
       "wezterm"
       "legcord"
       "tomatobar"
+      "nikitabobko/tap/aerospace"
       # "zen-browser"
     ];
 

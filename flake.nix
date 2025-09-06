@@ -21,9 +21,13 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    aerospace = {
+      url = "github:nikitabobko/aerospace";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, aerospace }:
     let
       configuration = { pkgs, ... }: {
         # List packages installed in system profile. To search by name, run:
@@ -92,6 +96,7 @@
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
+                "nikitabobko/aerospace" = aerospace;
               };
 
               # Optional: Enable fully-declarative tap management
