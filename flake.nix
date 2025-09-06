@@ -36,6 +36,7 @@
           with pkgs; [
             neovim
             tmux
+            gh
           ];
 
         fonts.packages = [

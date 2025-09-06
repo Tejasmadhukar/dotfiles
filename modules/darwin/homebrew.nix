@@ -7,7 +7,6 @@
     onActivation.cleanup = "uninstall";
 
     brews = [
-      "gh"
     ];
 
     casks = [
