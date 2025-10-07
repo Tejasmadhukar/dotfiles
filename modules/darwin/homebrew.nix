@@ -7,6 +7,7 @@
     onActivation.cleanup = "uninstall";
 
     brews = [
+      "btop"
     ];
 
     casks = [
@@ -15,6 +16,7 @@
       "tomatobar"
       "nikitabobko/tap/aerospace"
       # "zen-browser"
+      "db-browser-for-sqlite"
     ];
 
     # doesn't index 
