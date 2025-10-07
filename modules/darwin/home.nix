@@ -6,7 +6,14 @@
     enable = true;
 
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+        set fish_greeting # Disable greeting
+
+        if test -d /opt/homebrew/bin
+            fish_add_path /opt/homebrew/bin
+            fish_add_path /opt/homebrew/sbin
+        end
+
+        zoxide init fish | source
     '';
 
     shellAliases = {
@@ -25,7 +32,11 @@
     nodejs_22
     go
     rustup
+
     pnpm
+
+    ripgrep
+    zoxide
   ];
 
   xdg.configFile = {
@@ -34,6 +45,7 @@
   home.file = {
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
   };
+
 
   # The state version is required and should stay at the version you
   # originally installed.
