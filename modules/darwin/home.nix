@@ -14,6 +14,8 @@
         end
 
         zoxide init fish | source
+
+        pyenv init - fish | source
     '';
 
     shellAliases = {

@@ -8,6 +8,17 @@
 
     brews = [
       "btop"
+
+      "openssl"
+      "readline"
+      "sqlite3"
+      "xz"
+      "tcl-tk@8"
+      "libb2"
+      "zstd"
+      "zlib"
+      "pkgconfig"
+      "pyenv"
     ];
 
     casks = [
