@@ -46,6 +46,7 @@
   };
   home.file = {
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
+    ".aerospace.toml".source = ../../aerospace/.aerospace.toml;
   };
 
 
