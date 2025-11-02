@@ -43,6 +43,15 @@
 
   xdg.configFile = {
     "nvim".source = ../../nvim;
+    ".cargo/config.toml".text = ''
+        [target.x86_64-apple-darwin]
+        linker = "clang"
+        rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+
+        [target.aarch64-apple-darwin]
+        linker = "clang"
+        rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+    '';
   };
   home.file = {
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;

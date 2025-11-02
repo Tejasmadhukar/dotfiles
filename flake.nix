@@ -39,6 +39,8 @@
             gh
           ];
 
+        environment.etc.nix-darwin.source = "/Users/tejasmadhukar/dotfiles";
+
         fonts.packages = [
           (pkgs.nerd-fonts.jetbrains-mono)
         ];

@@ -9,7 +9,10 @@
     brews = [
       "btop"
     
+      #manage this with nix
       "gnupg"
+
+      "mold"
 
       "openssl"
       "readline"
