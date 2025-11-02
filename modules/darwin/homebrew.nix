@@ -8,10 +8,12 @@
 
     brews = [
       "btop"
+    
+      "gnupg"
 
       "openssl"
       "readline"
-      "sqlite3"
+      #"sqlite3"
       "xz"
       "tcl-tk@8"
       "libb2"
