@@ -8,11 +8,19 @@
 
     brews = [
       "btop"
+      "sshs"
+      "pypy3"
     
       #manage this with nix
       "gnupg"
+      "tcl-tk"
 
       "mold"
+
+      "gemini-cli"
+
+      "ffmpeg"
+
 
       "openssl"
       "readline"
@@ -33,6 +41,7 @@
       "nikitabobko/tap/aerospace"
       # "zen-browser"
       "db-browser-for-sqlite"
+      ""
     ];
 
     # doesn't index 

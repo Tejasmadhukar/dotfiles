@@ -16,6 +16,8 @@
         zoxide init fish | source
 
         pyenv init - fish | source
+
+        set -gx GPG_TTY (tty)
     '';
 
     shellAliases = {
@@ -39,6 +41,7 @@
 
     ripgrep
     zoxide
+    eza
   ];
 
   xdg.configFile = {
