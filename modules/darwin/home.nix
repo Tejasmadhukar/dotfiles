@@ -45,7 +45,7 @@
   ];
 
   xdg.configFile = {
-    "nvim".source = ../../nvim;
+    # "nvim".source = ../../nvim;
     ".cargo/config.toml".text = ''
         [target.x86_64-apple-darwin]
         linker = "clang"
