@@ -1,32 +1,43 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local opt = vim.opt
+opt.nu = true
+opt.relativenumber = true
+opt.cmdheight = 0
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+opt.smartindent = true
 
-vim.opt.colorcolumn = "80"
+opt.wrap = false
+
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+
+opt.hlsearch = false
+opt.incsearch = true
+
+opt.termguicolors = true
+
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+
+opt.updatetime = 50
+
+opt.colorcolumn = "80"
+
+-- try them out
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.shiftround = true
+opt.inccommand = "nosplit"
+opt.completeopt = { "menuone", "noinsert", "popup" }
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
