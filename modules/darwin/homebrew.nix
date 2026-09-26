@@ -4,13 +4,19 @@
   # Darwin-level Homebrew configuration
   homebrew = {
     enable = true;
-    onActivation.cleanup = "uninstall";
+
+    onActivation = {
+      # autoUpdate = true;
+      # upgrade = true;
+      cleanup = "uninstall";
+    };
 
     brews = [
       "btop"
       "sshs"
-      "pypy3"
-    
+      "mosh"
+      #"pypy3"
+
       #manage this with nix
       "gnupg"
       "tcl-tk"
@@ -20,9 +26,10 @@
       "gemini-cli"
 
       "ffmpeg"
+      "libbluray"
 
 
-      "openssl"
+      #"openssl"
       "readline"
       #"sqlite3"
       "xz"
@@ -30,7 +37,7 @@
       "libb2"
       "zstd"
       "zlib"
-      "pkgconfig"
+      "pkgconf"
       "pyenv"
     ];
 
@@ -41,7 +48,9 @@
       "nikitabobko/tap/aerospace"
       # "zen-browser"
       "db-browser-for-sqlite"
-      ""
+      "mitmproxy"
+      "android-platform-tools"
+      "android-commandlinetools"
     ];
 
     # doesn't index 

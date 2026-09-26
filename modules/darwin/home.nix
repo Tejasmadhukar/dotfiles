@@ -13,11 +13,14 @@
             fish_add_path /opt/homebrew/sbin
         end
 
+        fish_add_path ~/.local/bin
+
         zoxide init fish | source
 
         pyenv init - fish | source
 
         set -gx GPG_TTY (tty)
+        set -gx EDITOR nvim
     '';
 
     shellAliases = {
@@ -40,11 +43,8 @@
     pnpm
 
     ripgrep
-    fd
     zoxide
     eza
-    
-    tree-sitter
   ];
 
   xdg.configFile = {
